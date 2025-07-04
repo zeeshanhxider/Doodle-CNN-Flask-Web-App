@@ -15,7 +15,7 @@ if (ctx) {
       ctx.fillStyle = 'white';
       ctx.strokeStyle = 'black';
     }
-    ctx.lineWidth = 10;
+    ctx.lineWidth = 25;
     ctx.lineCap = 'round';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
@@ -79,12 +79,44 @@ function isDarkMode() {
   return document.body.classList.contains("dark");
 }
 
-  document.getElementById('downloadBtn').addEventListener('click', () => {
-    const link = document.createElement('a');
-    link.download = 'drawing.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  });
+document.getElementById('predictBtn').addEventListener('click', () => {
+  canvas.toBlob(function (blob) {
+    const formData = new FormData();
+    formData.append('image', blob, 'canvas.png');
+
+    fetch('/predict', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.error) {
+        alert("Prediction failed: " + data.error);
+        return;
+      }
+
+        const modal = document.getElementById('predictionModal');
+        const modalPrediction = document.getElementById('modalPrediction');
+        const closeModal = document.getElementById('closeModal');
+
+        modalPrediction.innerHTML = `
+        <strong>Prediction:</strong> ${data.label}<br>
+        <strong>Confidence:</strong> ${data.confidence}
+        `;
+
+        modal.classList.remove('hidden');
+
+        closeModal.onclick = () => modal.classList.add('hidden');
+        window.onclick = (e) => {
+        if (e.target === modal) modal.classList.add('hidden');
+        };
+
+    })
+    .catch(err => {
+      alert("Error predicting: " + err.message);
+    });
+  }, 'image/png');
+});
 
   const toggle = document.getElementById('darkModeToggle');
   const circle = toggle.querySelector('.circle');

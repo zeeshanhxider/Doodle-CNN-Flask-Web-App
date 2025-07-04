@@ -25,8 +25,9 @@
   <div class="page hidden" id="canvas-page">
   <canvas id="drawingCanvas" width="1024" height="1024"></canvas>
   <div class="canvas-buttons">
-    <button id="downloadBtn">Download</button>
+    <button id="predictBtn">Predict</button>
     <button id="clearBtn">Clear</button>
+    <div id="predictionResult"></div>
     </div>
   </div>
 
@@ -40,6 +41,15 @@
   <i class="bi bi-sun-fill icon"></i>
   <i class="bi bi-moon-fill icon"></i>
   <div class="circle"></div>
+  </div>
+
+  <!-- Prediction Modal -->
+   <div id="predictionModal" class="modal hidden">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>Prediction Result</h2>
+    <p id="modalPrediction"></p>
+    </div>
   </div>
 
   <!-- Main Script -->
