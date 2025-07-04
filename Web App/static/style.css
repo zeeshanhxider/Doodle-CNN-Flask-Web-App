@@ -1,0 +1,138 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent: #9EFF00;
+  --canvas-border: #9EFF00;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 2em;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em; 
+}
+
+.btn-group button,
+button {
+  width: 120px;
+  background-color: var(--accent);
+  color: var(--text-color);
+  border: none;
+  border-radius: 20px;
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-group button:hover,
+button:hover {
+  transform: scale(1.05);
+}
+
+.canvas-buttons {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+canvas {
+  border: 2px solid var(--canvas-border);
+  margin: 1em 0;
+  max-width: 75vw;
+  max-height: 75vh;
+  touch-action: none;
+  background-color: white;  
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #eeeeee;
+}
+
+body.dark canvas {
+  background-color: #1e1e1e;
+  border-color: var(--canvas-border);
+}
+
+.page h1 {
+  color: var(--text-color);
+}
+
+#darkModeToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 52px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#darkModeToggle .icon {
+  font-size: 1em;
+  color: #333;
+  z-index: 2;
+}
+
+#darkModeToggle .circle {
+  width: 24px;
+  height: 24px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1;
+}
+
+body.dark #darkModeToggle {
+  background-color: #444;
+}
+
+body.dark #darkModeToggle .icon {
+  color: #ffffff;
+}
+
+body.dark #darkModeToggle .circle {
+  background-color: #1e1e1e;
+  transform: translateX(35px);
+}
