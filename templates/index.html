@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doodle Detection AI</title>
+  <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
@@ -19,60 +20,49 @@
     <!-- top doodle strip -->                                  <!-- change this to a loop later in js -->
     <div class="doodle-strip top-strip">
       <div class="doodle-track">
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <img src="/static/assets/doodles/star.gif" alt="star">
+        <img src="/static/assets/doodles/flower.gif" alt="flower">
+        <img src="/static/assets/doodles/car.gif" alt="car">
+        <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
+        <img src="/static/assets/doodles/cake.gif" alt="cake">
+        <img src="/static/assets/doodles/crab.gif" alt="crab">
+        <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
+        <img src="/static/assets/doodles/house.gif" alt="house">
+        <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
+        <img src="/static/assets/doodles/scissors.gif" alt="scissors">
         <!-- repeat -->
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <img src="/static/assets/doodles/star.gif" alt="star">
+        <img src="/static/assets/doodles/flower.gif" alt="flower">
+        <img src="/static/assets/doodles/car.gif" alt="car">
+        <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
+        <img src="/static/assets/doodles/cake.gif" alt="cake">
+        <img src="/static/assets/doodles/crab.gif" alt="crab">
+        <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
+        <img src="/static/assets/doodles/house.gif" alt="house">
+        <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
+        <img src="/static/assets/doodles/scissors.gif" alt="scissors">
         <!-- repeat -->
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <img src="/static/assets/doodles/star.gif" alt="star">
+        <img src="/static/assets/doodles/flower.gif" alt="flower">
+        <img src="/static/assets/doodles/car.gif" alt="car">
+        <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
+        <img src="/static/assets/doodles/cake.gif" alt="cake">
+        <img src="/static/assets/doodles/crab.gif" alt="crab">
+        <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
+        <img src="/static/assets/doodles/house.gif" alt="house">
+        <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
+        <img src="/static/assets/doodles/scissors.gif" alt="scissors">
         <!-- repeat -->
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
-        <!-- repeat -->
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <img src="/static/assets/doodles/star.gif" alt="star">
+        <img src="/static/assets/doodles/flower.gif" alt="flower">
+        <img src="/static/assets/doodles/car.gif" alt="car">
+        <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
+        <img src="/static/assets/doodles/cake.gif" alt="cake">
+        <img src="/static/assets/doodles/crab.gif" alt="crab">
+        <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
+        <img src="/static/assets/doodles/house.gif" alt="house">
+        <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
+        <img src="/static/assets/doodles/scissors.gif" alt="scissors">
       </div>
     </div>
 
@@ -84,64 +74,52 @@
       <button onclick="goToPage('about-page')">About</button>
     </div>
 
-
     <!-- bottom doodle strip -->
     <div class="doodle-strip bottom-strip">
       <div class="doodle-track reverse">
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <img src="/static/assets/doodles/star.gif" alt="star">
+        <img src="/static/assets/doodles/flower.gif" alt="flower">
+        <img src="/static/assets/doodles/car.gif" alt="car">
+        <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
+        <img src="/static/assets/doodles/cake.gif" alt="cake">
+        <img src="/static/assets/doodles/crab.gif" alt="crab">
+        <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
+        <img src="/static/assets/doodles/house.gif" alt="house">
+        <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
+        <img src="/static/assets/doodles/scissors.gif" alt="scissors">
         <!-- repeat -->
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <img src="/static/assets/doodles/star.gif" alt="star">
+        <img src="/static/assets/doodles/flower.gif" alt="flower">
+        <img src="/static/assets/doodles/car.gif" alt="car">
+        <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
+        <img src="/static/assets/doodles/cake.gif" alt="cake">
+        <img src="/static/assets/doodles/crab.gif" alt="crab">
+        <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
+        <img src="/static/assets/doodles/house.gif" alt="house">
+        <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
+        <img src="/static/assets/doodles/scissors.gif" alt="scissors">
         <!-- repeat -->
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <img src="/static/assets/doodles/star.gif" alt="star">
+        <img src="/static/assets/doodles/flower.gif" alt="flower">
+        <img src="/static/assets/doodles/car.gif" alt="car">
+        <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
+        <img src="/static/assets/doodles/cake.gif" alt="cake">
+        <img src="/static/assets/doodles/crab.gif" alt="crab">
+        <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
+        <img src="/static/assets/doodles/house.gif" alt="house">
+        <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
+        <img src="/static/assets/doodles/scissors.gif" alt="scissors">
         <!-- repeat -->
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
-        <!-- repeat -->
-        <img src="/static/doodles/star.gif" alt="star">
-        <img src="/static/doodles/flower.gif" alt="flower">
-        <img src="/static/doodles/car.gif" alt="car">
-        <img src="/static/doodles/bicycle.gif" alt="bicycle">
-        <img src="/static/doodles/cake.gif" alt="cake">
-        <img src="/static/doodles/crab.gif" alt="crab">
-        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
-        <img src="/static/doodles/house.gif" alt="house">
-        <img src="/static/doodles/sailboat.gif" alt="sailboat">
-        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <img src="/static/assets/doodles/star.gif" alt="star">
+        <img src="/static/assets/doodles/flower.gif" alt="flower">
+        <img src="/static/assets/doodles/car.gif" alt="car">
+        <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
+        <img src="/static/assets/doodles/cake.gif" alt="cake">
+        <img src="/static/assets/doodles/crab.gif" alt="crab">
+        <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
+        <img src="/static/assets/doodles/house.gif" alt="house">
+        <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
+        <img src="/static/assets/doodles/scissors.gif" alt="scissors">
       </div>
     </div>
 
@@ -149,11 +127,11 @@
 
   <!-- about Page -->
   <div class="page hidden" id="about-page">
-    <img src="/static/about_elements/pfp.png" alt="Zeeshan's photo" class="profile-pic" width="281" height="273">
+    <img src="/static/assets/about_elements/pfp.png" alt="Zeeshan's photo" class="profile-pic" width="281" height="273">
 
     <h1 class="about-heading">
       Hi I'm
-      <img id="nameGif" src="/static/about_elements/name.gif" alt="Zeeshan" class="name-gif" />
+      <img id="nameGif" src="/static/assets/about_elements/name.gif" alt="Zeeshan" class="name-gif" />
     </h1>
     <p class="about-description">
       I am a Software Engineering major at NUST, passionate about using AI to solve real-world problems. Let's connect!
@@ -188,43 +166,43 @@
       <p id="classNote">Try drawing the following objects:</p>
       <div class="doodle-grid">
         <div class="doodle-item">
-          <img src="/static/doodles/bicycle.gif" alt="bicycle">
+          <img src="/static/assets/doodles/bicycle.gif" alt="bicycle">
           <span>Bicycle</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/cake.gif" alt="cake">
+          <img src="/static/assets/doodles/cake.gif" alt="cake">
           <span>Cake</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/car.gif" alt="car">
+          <img src="/static/assets/doodles/car.gif" alt="car">
           <span>Car</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/crab.gif" alt="crab">
+          <img src="/static/assets/doodles/crab.gif" alt="crab">
           <span>Crab</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/flower.gif" alt="flower">
+          <img src="/static/assets/doodles/flower.gif" alt="flower">
           <span>Flower</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/house.gif" alt="house">
+          <img src="/static/assets/doodles/house.gif" alt="house">
           <span>House</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+          <img src="/static/assets/doodles/ice_cream.gif" alt="ice_cream">
           <span>Ice Cream</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/sailboat.gif" alt="sailboat">
+          <img src="/static/assets/doodles/sailboat.gif" alt="sailboat">
           <span>Sailboat</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/scissors.gif" alt="scissors">
+          <img src="/static/assets/doodles/scissors.gif" alt="scissors">
           <span>Scissors</span>
         </div>
         <div class="doodle-item">
-          <img src="/static/doodles/star.gif" alt="star">
+          <img src="/static/assets/doodles/star.gif" alt="star">
           <span>Star</span>
         </div>
       </div>

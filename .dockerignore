@@ -1,0 +1,6 @@
+venv/
+CNN Model/
+QuickDrawDataset/
+README.md
+LICENSE
+.gitignore

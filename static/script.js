@@ -181,12 +181,12 @@ if (ctx) {
 
   // updates doodle image paths based on theme
   function updateDoodleImageSources() {
-    const images = document.querySelectorAll('img[src*="/static/doodles"]');
+    const images = document.querySelectorAll('img[src*="/static/assets/doodles"]');
     const mode = isDarkMode() ? "doodles_dark" : "doodles";
 
     images.forEach(img => {
       const filename = img.src.split("/").pop();
-      img.src = `/static/${mode}/${filename}`;
+      img.src = `/static/assets/${mode}/${filename}`;
     });
   }
 }
@@ -195,7 +195,7 @@ if (ctx) {
 function updateNameGif() {
   const nameGif = document.getElementById('nameGif');
   if (nameGif) {
-    nameGif.src = isDarkMode() ? '/static/about_elements/name_dark.gif' : '/static/about_elements/name.gif';
+    nameGif.src = isDarkMode() ? '/static/assets/about_elements/name_dark.gif' : '/static/assets/about_elements/name.gif';
   }
 }
 
