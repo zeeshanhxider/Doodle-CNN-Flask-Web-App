@@ -7,10 +7,8 @@ import base64
 
 app = Flask(__name__)
 
-# Load model
 model = tf.keras.models.load_model('doodle_cnn_model.keras')
 
-# Class names
 SELECTED_CLASSES = [
     "bicycle", "cake","car", "crab", "flower","house", "ice cream","sailboat", "scissors", "star", 
 ]
