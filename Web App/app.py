@@ -12,9 +12,7 @@ model = tf.keras.models.load_model('doodle_cnn_model.keras')
 
 # Class names
 SELECTED_CLASSES = [
-    "apple", "butterfly", "camera", "cake", "clock", "cup", "dolphin", "elephant",
-    "fish", "flower", "guitar", "ice cream", "key", "mountain", "moon", "octopus",
-    "pizza", "scissors", "star", "sun", "train", "umbrella", "bus"
+    "bicycle", "cake","car", "crab", "flower","house", "ice cream","sailboat", "scissors", "star", 
 ]
 
 def prepare_image(img_bytes):

@@ -6,34 +6,12 @@ from tensorflow.keras import layers, models, regularizers, initializers
 
 # configuration
 DATA_DIR = "/QuickdrawDataset/quickdraw_npy"
-SAMPLES_PER_CLASS = 50000
+SAMPLES_PER_CLASS = 110000
 BATCH_SIZE = 128
 EPOCHS = 3
 
-SELECTED_CLASSES = [
-    "apple",
-    "butterfly",
-    "camera",
-    "cake",
-    "clock",
-    "cup",
-    "dolphin",
-    "elephant",
-    "fish",
-    "flower",
-    "guitar",
-    "ice cream",
-    "key",
-    "mountain",
-    "moon",
-    "octopus",
-    "pizza",
-    "scissors",
-    "star",
-    "sun",
-    "train",
-    "umbrella",
-    "bus"
+SELECTED_CLASSES = SELECTED_CLASSES = [
+    "bicycle", "cake","car", "crab", "flower","house", "ice cream","sailboat", "scissors", "star", 
 ]
 
 NUM_CLASSES = len(SELECTED_CLASSES)

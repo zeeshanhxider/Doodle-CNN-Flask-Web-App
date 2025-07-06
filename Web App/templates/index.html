@@ -8,33 +8,179 @@
   <!-- Bootstrap Icons for moon/sun -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!-- Main stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
 
-  <!-- Welcome Page -->
-  <div class="page" id="welcome-page">
-    <h1>Welcome to Doodle</h1>
-    <div class="btn-group">
-      <button onclick="goToPage('canvas-page')">Draw</button>
-      <button onclick="goToPage('about-page')">About</button>
-    </div>
+<!-- Welcome Page -->
+<div class="page" id="welcome-page">
+
+  <!-- Top Doodle Strip -->
+  <div class="doodle-strip top-strip">
+  <div class="doodle-track">
+    <img src="/static/doodles/star.gif" alt="star">
+    <img src="/static/doodles/flower.gif" alt="flower">
+    <img src="/static/doodles/car.gif" alt="car">
+    <img src="/static/doodles/bicycle.gif" alt="bicycle">
+    <img src="/static/doodles/cake.gif" alt="cake">
+    <img src="/static/doodles/crab.gif" alt="crab">
+    <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+    <img src="/static/doodles/house.gif" alt="house">
+    <img src="/static/doodles/sailboat.gif" alt="sailboat">
+    <img src="/static/doodles/scissors.gif" alt="scissors">
+    <!-- repeat -->
+    <img src="/static/doodles/star.gif" alt="star">
+    <img src="/static/doodles/flower.gif" alt="flower">
+    <img src="/static/doodles/car.gif" alt="car">
+    <img src="/static/doodles/bicycle.gif" alt="bicycle">
+    <img src="/static/doodles/cake.gif" alt="cake">
+    <img src="/static/doodles/crab.gif" alt="crab">
+    <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+    <img src="/static/doodles/house.gif" alt="house">
+    <img src="/static/doodles/sailboat.gif" alt="sailboat">
+    <img src="/static/doodles/scissors.gif" alt="scissors">
+    <!-- repeat -->
+    <img src="/static/doodles/star.gif" alt="star">
+    <img src="/static/doodles/flower.gif" alt="flower">
+    <img src="/static/doodles/car.gif" alt="car">
+    <img src="/static/doodles/bicycle.gif" alt="bicycle">
+    <img src="/static/doodles/cake.gif" alt="cake">
+    <img src="/static/doodles/crab.gif" alt="crab">
+    <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+    <img src="/static/doodles/house.gif" alt="house">
+    <img src="/static/doodles/sailboat.gif" alt="sailboat">
+    <img src="/static/doodles/scissors.gif" alt="scissors">
+    <!-- repeat -->
+    <img src="/static/doodles/star.gif" alt="star">
+    <img src="/static/doodles/flower.gif" alt="flower">
+    <img src="/static/doodles/car.gif" alt="car">
+    <img src="/static/doodles/bicycle.gif" alt="bicycle">
+    <img src="/static/doodles/cake.gif" alt="cake">
+    <img src="/static/doodles/crab.gif" alt="crab">
+    <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+    <img src="/static/doodles/house.gif" alt="house">
+    <img src="/static/doodles/sailboat.gif" alt="sailboat">
+    <img src="/static/doodles/scissors.gif" alt="scissors">
+  </div>
+</div>
+
+  <h1>Welcome to Doodle</h1>
+  <h2>Draw something and my neural network will try to predict it :)</h2>
+
+  <div class="btn-group">
+    <button onclick="goToPage('canvas-page')">Draw</button>
   </div>
 
+  <!-- Bottom Doodle Strip -->
+<div class="doodle-strip bottom-strip">
+  <div class="doodle-track reverse">
+    <img src="/static/doodles/star.gif" alt="star">
+    <img src="/static/doodles/flower.gif" alt="flower">
+    <img src="/static/doodles/car.gif" alt="car">
+    <img src="/static/doodles/bicycle.gif" alt="bicycle">
+    <img src="/static/doodles/cake.gif" alt="cake">
+    <img src="/static/doodles/crab.gif" alt="crab">
+    <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+    <img src="/static/doodles/house.gif" alt="house">
+    <img src="/static/doodles/sailboat.gif" alt="sailboat">
+    <img src="/static/doodles/scissors.gif" alt="scissors">
+    <!-- repeat -->
+    <img src="/static/doodles/star.gif" alt="star">
+    <img src="/static/doodles/flower.gif" alt="flower">
+    <img src="/static/doodles/car.gif" alt="car">
+    <img src="/static/doodles/bicycle.gif" alt="bicycle">
+    <img src="/static/doodles/cake.gif" alt="cake">
+    <img src="/static/doodles/crab.gif" alt="crab">
+    <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+    <img src="/static/doodles/house.gif" alt="house">
+    <img src="/static/doodles/sailboat.gif" alt="sailboat">
+    <img src="/static/doodles/scissors.gif" alt="scissors">
+    <!-- repeat -->
+    <img src="/static/doodles/star.gif" alt="star">
+    <img src="/static/doodles/flower.gif" alt="flower">
+    <img src="/static/doodles/car.gif" alt="car">
+    <img src="/static/doodles/bicycle.gif" alt="bicycle">
+    <img src="/static/doodles/cake.gif" alt="cake">
+    <img src="/static/doodles/crab.gif" alt="crab">
+    <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+    <img src="/static/doodles/house.gif" alt="house">
+    <img src="/static/doodles/sailboat.gif" alt="sailboat">
+    <img src="/static/doodles/scissors.gif" alt="scissors">
+    <!-- repeat -->
+    <img src="/static/doodles/star.gif" alt="star">
+    <img src="/static/doodles/flower.gif" alt="flower">
+    <img src="/static/doodles/car.gif" alt="car">
+    <img src="/static/doodles/bicycle.gif" alt="bicycle">
+    <img src="/static/doodles/cake.gif" alt="cake">
+    <img src="/static/doodles/crab.gif" alt="crab">
+    <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+    <img src="/static/doodles/house.gif" alt="house">
+    <img src="/static/doodles/sailboat.gif" alt="sailboat">
+    <img src="/static/doodles/scissors.gif" alt="scissors">
+  </div>
+</div>
+
+</div>
+
   <!-- Canvas Page -->
-  <div class="page hidden" id="canvas-page">
+<div class="page hidden" id="canvas-page">
   <canvas id="drawingCanvas" width="1024" height="1024"></canvas>
+
   <div class="canvas-buttons">
     <button id="predictBtn">Predict</button>
     <button id="clearBtn">Clear</button>
     <div id="predictionResult"></div>
-    </div>
   </div>
 
-  <!-- About Page -->
-  <div class="page hidden" id="about-page">
-    <h1>This app is made by me haha</h1>
+  <!-- Doodle Class Info Section -->
+  <div id="class-info">
+    <p id="classNote">Try drawing the following objects:</p>
+    <div class="doodle-grid">
+      <div class="doodle-item">
+        <img src="/static/doodles/bicycle.gif" alt="bicycle">
+        <span>Bicycle</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/cake.gif" alt="cake">
+        <span>Cake</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/car.gif" alt="car">
+        <span>Car</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/crab.gif" alt="crab">
+        <span>Crab</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/flower.gif" alt="flower">
+        <span>Flower</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/house.gif" alt="house">
+        <span>House</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/ice_cream.gif" alt="ice_cream">
+        <span>Ice Cream</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/sailboat.gif" alt="sailboat">
+        <span>Sailboat</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/scissors.gif" alt="scissors">
+        <span>Scissors</span>
+      </div>
+      <div class="doodle-item">
+        <img src="/static/doodles/star.gif" alt="star">
+        <span>Star</span>
+      </div>
+    </div>
   </div>
+</div>
 
   <!-- Dark Mode Toggle -->
   <div id="darkModeToggle">

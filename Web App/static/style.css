@@ -3,13 +3,14 @@
   --text-color: #000000;
   --accent: #9EFF00;
   --canvas-border: #9EFF00;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* slightly lighter */
+  --radius: 16px;
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
@@ -18,6 +19,8 @@ body {
   justify-content: center;
   min-height: 100vh;
   text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
 }
 
 .page {
@@ -25,8 +28,24 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1em;
+  gap: 1.5em;
   padding: 2em;
+  max-width: 800px;
+  width: 100%;
+}
+
+.page h1 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 3rem;
+  margin-bottom: 0.2em;
+}
+
+.page h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0;
+  color: var(--text-color);
 }
 
 .hidden {
@@ -35,43 +54,57 @@ body {
 
 .btn-group {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1em; 
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-group button,
 button {
-  width: 120px;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--accent);
-  color: var(--text-color);
+  color: black;
   border: none;
-  border-radius: 20px;
-  padding: 0.5em 1.5em;
-  font-size: 1em;
+  border-radius: var(--radius);
+  padding: 0.6em 1.6em;
+  font-size: 0.95rem;
+  font-weight: 500; 
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-group button:hover,
 button:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 .canvas-buttons {
+  font-family: 'Poppins', sans-serif;
   display: flex;
-  gap: 1em;
+  gap: 0.8em;
   justify-content: center;
-  margin-top: 1em;
+  flex-wrap: wrap;
+  margin: 8px 0 4px 0; 
 }
 
 canvas {
   border: 2px solid var(--canvas-border);
-  margin: 1em 0;
-  max-width: 75vw;
-  max-height: 75vh;
+  margin: 0.5em 0;
+  max-width: 85vw;
+  max-height: 65vh;
   touch-action: none;
-  background-color: white;  
+  background-color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+#drawingCanvas {
+  border: 3px solid #9EFF00;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
 }
 
 body.dark {
@@ -81,45 +114,40 @@ body.dark {
 
 body.dark canvas {
   background-color: #1e1e1e;
-  border-color: var(--canvas-border);
-}
-
-.page h1 {
-  color: var(--text-color);
 }
 
 #darkModeToggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 52px;
-  height: 30px;
+  width: 56px;
+  height: 32px;
   background-color: #ccc;
-  border-radius: 50px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 7px;
+  padding: 0 8px;
   cursor: pointer;
+  box-shadow: var(--shadow);
   transition: background-color 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
 #darkModeToggle .icon {
-  font-size: 1em;
+  font-size: 1.1em;
   color: #333;
   z-index: 2;
 }
 
 #darkModeToggle .circle {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   background-color: #f0f0f0;
   border-radius: 50%;
   position: absolute;
-  top: 3px;
-  left: 3px;
+  top: 4px;
+  left: 4px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   z-index: 1;
 }
@@ -134,7 +162,7 @@ body.dark #darkModeToggle .icon {
 
 body.dark #darkModeToggle .circle {
   background-color: #1e1e1e;
-  transform: translateX(35px);
+  transform: translateX(38px);
 }
 
 .modal {
@@ -144,11 +172,11 @@ body.dark #darkModeToggle .circle {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1em;
 }
 
 .modal.hidden {
@@ -159,23 +187,146 @@ body.dark #darkModeToggle .circle {
   background-color: var(--bg-color);
   color: var(--text-color);
   padding: 2em;
-  border-radius: 12px;
+  border-radius: var(--radius);
   text-align: center;
   min-width: 250px;
   max-width: 90vw;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .modal-content h2 {
   margin-top: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .close {
   position: absolute;
   top: 15px;
-  right: 25px;
-  font-size: 24px;
+  right: 20px;
+  font-size: 1.4rem;
   font-weight: bold;
   color: var(--text-color);
   cursor: pointer;
+}
+
+#class-info {
+  margin-top: 4px; 
+  text-align: center;
+  max-width: 1500px;
+  padding: 0.5em 1em; 
+}
+
+#class-info p {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-top: 0.75em;
+  color: var(--text-color);
+}
+
+.doodle-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 2.5em;
+  justify-items: center;
+  margin-top: 2em;
+}
+
+.doodle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1em;
+}
+
+.doodle-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 0.5em;
+  border-radius: 8px;
+  padding: 0.4em;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* works in both modes */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doodle-item img:hover {
+  transform: scale(1.1);
+}
+
+body.dark .doodle-item img {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.doodle-item img,
+.doodle-track img {
+  transition: opacity 0.3s ease;
+}
+
+.doodle-item img.fading,
+.doodle-track img.fading {
+  opacity: 0;
+}
+
+
+#classNote {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.doodle-strip {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  z-index: 1000;
+  background: transparent;
+  pointer-events: none;
+  left: 0;
+}
+
+.top-strip {
+  top: 0;
+}
+
+.bottom-strip {
+  bottom: 0;
+}
+
+.doodle-track {
+  display: flex;
+  gap: 1.2em;
+  width: max-content;
+  animation: scroll-left 12s linear infinite; 
+}
+
+.doodle-track.reverse {
+  animation: scroll-right 12s linear infinite;
+}
+
+.doodle-track img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Animations */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-20%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-20%); }
+  100% { transform: translateX(0); }
 }

@@ -15,7 +15,7 @@ if (ctx) {
       ctx.fillStyle = 'white';
       ctx.strokeStyle = 'black';
     }
-    ctx.lineWidth = 25;
+    ctx.lineWidth = 15;
     ctx.lineCap = 'round';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
@@ -70,60 +70,70 @@ if (ctx) {
   canvas.addEventListener('touchend', stopDraw);
 
   document.getElementById("clearBtn").addEventListener("click", () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = isDarkMode() ? "#1e1e1e" : "#ffffff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-});
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = isDarkMode() ? "#1e1e1e" : "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  });
 
-function isDarkMode() {
-  return document.body.classList.contains("dark");
-}
+  function isDarkMode() {
+    return document.body.classList.contains("dark");
+  }
 
-document.getElementById('predictBtn').addEventListener('click', () => {
-  canvas.toBlob(function (blob) {
-    const formData = new FormData();
-    formData.append('image', blob, 'canvas.png');
+  document.getElementById('predictBtn').addEventListener('click', () => {
+    canvas.toBlob(function (blob) {
+      const formData = new FormData();
+      formData.append('image', blob, 'canvas.png');
 
-    fetch('/predict', {
-      method: 'POST',
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.error) {
-        alert("Prediction failed: " + data.error);
-        return;
-      }
+      fetch('/predict', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) {
+          alert("Prediction failed: " + data.error);
+          return;
+        }
 
         const modal = document.getElementById('predictionModal');
         const modalPrediction = document.getElementById('modalPrediction');
         const closeModal = document.getElementById('closeModal');
 
         modalPrediction.innerHTML = `
-        <strong>Prediction:</strong> ${data.label}<br>
-        <strong>Confidence:</strong> ${data.confidence}
+          <strong>Prediction:</strong> ${data.label}<br>
+          <strong>Confidence:</strong> ${data.confidence}
         `;
 
         modal.classList.remove('hidden');
 
         closeModal.onclick = () => modal.classList.add('hidden');
         window.onclick = (e) => {
-        if (e.target === modal) modal.classList.add('hidden');
+          if (e.target === modal) modal.classList.add('hidden');
         };
 
-    })
-    .catch(err => {
-      alert("Error predicting: " + err.message);
-    });
-  }, 'image/png');
-});
+      })
+      .catch(err => {
+        alert("Error predicting: " + err.message);
+      });
+    }, 'image/png');
+  });
 
   const toggle = document.getElementById('darkModeToggle');
   const circle = toggle.querySelector('.circle');
 
   toggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-
     setCanvasStyles();
+    updateDoodleImageSources();
   });
+
+  function updateDoodleImageSources() {
+    const images = document.querySelectorAll('img[src*="/static/doodles"]');
+    const mode = isDarkMode() ? "doodles_dark" : "doodles";
+    
+    images.forEach(img => {
+      const filename = img.src.split("/").pop();
+      img.src = `/static/${mode}/${filename}`;
+    });
+  }
 }
