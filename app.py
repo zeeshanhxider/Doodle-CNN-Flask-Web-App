@@ -3,7 +3,6 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 import io
-import base64
 
 app = Flask(__name__)
 
