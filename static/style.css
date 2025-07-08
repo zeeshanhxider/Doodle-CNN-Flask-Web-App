@@ -53,7 +53,7 @@ body {
 
 .page h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
   margin-top: 0;
   color: var(--text-color);
@@ -102,9 +102,9 @@ button:hover {
 
 canvas {
   border: 2px solid var(--canvas-border);
-  margin: 0.5em 0;
+  margin: 0.5em 0 0.5em 0;
   max-width: 85vw;
-  max-height: 65vh;
+  max-height: 75vh;
   touch-action: none;
   background-color: #fff;
   border-radius: var(--radius);
@@ -299,6 +299,8 @@ body.dark .doodle-item img {
   background: transparent;
   pointer-events: none;
   left: 0;
+  margin-top: 5px;  
+  margin-bottom: 12px;
 }
 
 .top-strip {
@@ -321,8 +323,8 @@ body.dark .doodle-item img {
 }
 
 .doodle-track img {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   object-fit: contain;
   border-radius: 6px;
   background: transparent;
@@ -442,18 +444,37 @@ body.dark .doodle-item img {
   margin-bottom: 1rem;
 }
 
+.confetti-canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 100 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 @media (max-width: 768px) {
   .page {
-    padding: 1em;
+    padding: 2em;
   }
 
   .page h1 {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
   }
 
   .doodle-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5em;
+  }
+
+  canvas {
+    margin: 7em 0 1em 0 !important; 
   }
 
   .doodle-item img {
@@ -473,19 +494,11 @@ body.dark .doodle-item img {
   .about-description {
     font-size: 1rem;
   }
-}
-
-.confetti-canvas {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  pointer-events: none !important;
-  z-index: 100 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  
+  .confetti-canvas {
+    top: 80px !important;       
+    left: 20px !important;      
+    width: calc(100vw - 20px) !important;
+    height: calc(100vh - 80px) !important;
+  }
 }

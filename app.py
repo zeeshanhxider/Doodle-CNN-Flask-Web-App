@@ -9,7 +9,16 @@ app = Flask(__name__)
 model = tf.keras.models.load_model('doodle_cnn_model.keras')
 
 SELECTED_CLASSES = [
-    "bicycle", "cake","car", "crab", "flower","house", "ice cream","sailboat", "scissors", "star", 
+    "The Eiffel Tower 🗼",
+    "The Mona Lisa 🖼️",
+    "Airplane ✈️",
+    "Angel 👼",
+    "Car 🚗",
+    "Cat 🐱",
+    "Elephant 🐘",
+    "Mountain ⛰️",
+    "You ⭐",
+    "Whale 🐳"
 ]
 
 def prepare_image(img_bytes):

@@ -1,10 +1,19 @@
+#run this script to download the Quickdraw dataset
 import os
 import urllib.request
 
 labels = [
-    "bicycle", "cake","car", "crab", "flower","house", "ice cream","sailboat", "scissors", "star", 
+    "The Eiffel Tower",
+    "The Mona Lisa",
+    "airplane",
+    "angel",
+    "car",
+    "cat",
+    "elephant",
+    "mountain",
+    "star",
+    "whale"
 ]
-
 
 # Remove duplicates
 labels = list(dict.fromkeys(labels))

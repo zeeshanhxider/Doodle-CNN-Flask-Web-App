@@ -4,7 +4,16 @@ from PIL import Image
 
 # Class names
 SELECTED_CLASSES = [
-    "bicycle", "cake","car", "crab", "flower","house", "ice cream","sailboat", "scissors", "star", 
+    "The Eiffel Tower",
+    "The Mona Lisa",
+    "airplane",
+    "angel",
+    "car",
+    "cat",
+    "elephant",
+    "mountain",
+    "star",
+    "whale"
 ]
 
 # Load CNN model
