@@ -53,5 +53,9 @@ def predict():
         'confidence': f"{confidence:.2f}%"
     })
 
+@app.route("/health")
+def health():
+    return "OK", 200
+
 if __name__ == '__main__':
     app.run()
